@@ -290,6 +290,44 @@
 \end{flushleft}
 %\textcolor{softcol}{\hrule}
 }
+
+% Customs For skill part
+\newcommand{\skidev}[9] {
+\begin{flushleft}
+\textbf{#1}\\[-7pt]
+\vspace{\spread}
+\begin{tabular*}{1\linewidth}{p{0.001\linewidth} p{0.9\linewidth}}
+	\larrow{bgcol} & \textcolor{sectcol}{#2} #3 \\[2pt]
+	\larrow{bgcol} & \textcolor{sectcol}{#4} #5 \\[2pt]
+	\larrow{bgcol} & \textcolor{sectcol}{#6} #7 \\[2pt]
+	\larrow{bgcol} & \textcolor{sectcol}{#8} #9\\[\spread]
+\end{tabular*}
+\end{flushleft}
+}
+
+\newcommand{\skilang}[7] {
+\begin{flushleft}
+\textbf{#1}\\[-7pt]
+\vspace{\spread}
+\begin{tabular*}{1\linewidth}{p{0.001\linewidth} p{0.9\linewidth}}
+	\larrow{bgcol} & \textcolor{sectcol}{#2} #3 \\[2pt]
+	\larrow{bgcol} & \textcolor{sectcol}{#4} #5 \\[2pt]
+	\larrow{bgcol} & \textcolor{sectcol}{#6} #7\\[\spread]
+\end{tabular*}
+\end{flushleft}
+}
+
+\newcommand{\skienv}[5] {
+\begin{flushleft}
+\textbf{#1}\\[-7pt]
+\vspace{\spread}
+\begin{tabular*}{1\linewidth}{p{0.001\linewidth} p{0.9\linewidth}}
+	\larrow{bgcol} & \textcolor{sectcol}{#2} #3 \\[2pt]
+	\larrow{bgcol} & \textcolor{sectcol}{#4} #5\\[\spread]
+\end{tabular*}
+\end{flushleft}
+}
+
 % creates a stretched box as 
 \newcommand{\cveventmeta}[4] {
 	\mbox{\mystrut \hspace{87pt}\textit{#1}}\\
@@ -392,11 +430,10 @@ We recently raised funds, our product is now production-ready and a first set of
 	%, Linux, Git, IntelliJ}
 \metasection{Friendly}{Docker, Yarn, Spark, Kafka, Python, Bash}
 %\metasection{Loves:}{Music, Football, Art and Design, DIY}
+
 \end{minipage}
-
-
+\hfill
 \begin{minipage}[t]{0.485\textwidth}
-
 \vspace{\spread}
 
 %---------------------------------------------------------------------------------------
@@ -419,6 +456,27 @@ We recently raised funds, our product is now production-ready and a first set of
 	{Modeling methodologies Merise / UML}	
 	{Accountancy, HMI }
 
+
+%---------------------------------------------------------------------------------------
+%	SKILLS SECTION
+%--------------------------------------------------------------------------------------
+
+\cvsection{Detailed Skills}
+\skilang{Languages}
+	{Expert :}{Java JDK 8, Multithreading}
+	{Ready :}{Bash, SQL}	 
+	{Beginner :}{Python, Scala}   
+	
+\skidev{Development}
+	{Methodologies :}{ Scrum, Test Driven Development}
+	{Dev tools :}{ Git, Jira, Maven, TeamCity}
+	{Profiling :}{ Yourkit, JStack, JVisualVM}
+	{Techno :}{ Hadoop, HDFS, ZK, HBase, Lucene, Spark, Kafka, Protobuf}
+	
+\skienv{Environment}
+	{Container :}{ Docker }
+	{Operating System :}{ Ubuntu, CentOs}
+	
 %---------------------------------------------------------------------------------------
 %	CHANGE TO RIGHT SIDE PART 
 %----------------------------------------------------------------------------------------
@@ -431,8 +489,6 @@ We recently raised funds, our product is now production-ready and a first set of
 %	EXPERIENCE
 %----------------------------------------------------------------------------------------
 \cvsection{Experience}
-
-%
 \cveventfour{2016 / 2019}{Team Leader}{Scaled Risk}
 	{Stand-up meeting animation and team planning}
 	{Code review sessions, Setting up code quality}  
