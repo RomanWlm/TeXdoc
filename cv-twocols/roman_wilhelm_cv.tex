@@ -142,6 +142,7 @@
 
 %dark background color / couleur secondaire
 \definecolor{sectcol}{RGB}{50,180,150}
+\definecolor{nosectcol}{RGB}{255,255,255}
 
 %light background / accent color (soulignage)
 \definecolor{softcol}{RGB}{4,139,154}
@@ -219,6 +220,11 @@
 \newcommand{\metasection}[2]{
 	\begin{tabular*}{1\linewidth}{p{0.18\linewidth} p{0.76\linewidth}}
 		\larrow{bgcol}\normalsize{\textbf{\textcolor{sectcol}{#1}}}&#2\\
+	\end{tabular*}
+}
+\newcommand{\metasectionsuite}[2]{
+	\begin{tabular*}{1\linewidth}{p{0.18\linewidth} p{0.76\linewidth}}
+		\larrow{nosectcol}\normalsize{\textbf{\textcolor{nosectcol}{#1}}}&#2\\
 	\end{tabular*}
 }
 
@@ -418,7 +424,6 @@ We recently raised funds, our product is now production-ready and a first set of
 %	META SECTION
 %----------------------------------------------------------------------------------------
 \metasection{Status}{Team Leader, Big Data Back-End Engineer}
-%\metasection{Fields:}{Team Management, Software Development} 
 \metasection{Loves}{Music, Art and Design, Craft and Renovate}
 \end{minipage}
 \hfill
@@ -426,10 +431,8 @@ We recently raised funds, our product is now production-ready and a first set of
 
 \vspace{5pt}
 
-\metasection{Skills}{Java 8, HBase, HDFS, Zookeeper, Lucene}
-	%, Linux, Git, IntelliJ}
-\metasection{Friendly}{Docker, Yarn, Spark, Kafka, Python, Bash}
-%\metasection{Loves:}{Music, Football, Art and Design, DIY}
+\metasection{Fields}{Software, Distributed Systems, Near RealTime}
+\metasectionsuite{}{Database, Data models, Indexation}
 
 \end{minipage}
 \hfill
