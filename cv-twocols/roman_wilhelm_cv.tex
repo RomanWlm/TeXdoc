@@ -68,6 +68,8 @@
 % more font size definitions
 \usepackage{moresize}		
 
+% Avoid hyphenation
+\usepackage[none]{hyphenat}
 %----------------------------------------------------------------------------------------
 %	PAGE LAYOUT  DEFINITIONS
 %----------------------------------------------------------------------------------------
@@ -86,7 +88,7 @@
 \pagestyle{fancy}
 
 %less space between header and content
-\setlength{\headheight}{-5pt}		
+\setlength{\headheight}{-12pt}		
 
 %customize entries left, center and right
 \lhead{}
@@ -112,6 +114,8 @@
 
 \usepackage{enumitem}
 
+% Reduce tabular row height 
+\renewcommand{\arraystretch}{0.9}
 
 %----------------------------------------------------------------------------------------
 %	GRAPHICS DEFINITIONS
@@ -211,7 +215,7 @@
 {
 \colorbox{bgcol}{\makebox[1\linewidth][l]{
 	\larrow{sectcol} \hspace{-8pt} \larrow{sectcol} \hspace{-8pt} \larrow{sectcol} \textcolor{white}{\textbf{#1}}\hspace{4pt}
-}}\\
+}}
 }
 
 %create a coloured arrow with title as cv meta section section
@@ -301,12 +305,13 @@
 \newcommand{\skidev}[9] {
 \begin{flushleft}
 \textbf{#1}\\[-7pt]
+\textcolor{softcol}{\hrule}
 \vspace{\spread}
-\begin{tabular*}{1\linewidth}{p{0.001\linewidth} p{0.9\linewidth}}
-	\larrow{bgcol} & \textcolor{sectcol}{#2} #3 \\[2pt]
-	\larrow{bgcol} & \textcolor{sectcol}{#4} #5 \\[2pt]
-	\larrow{bgcol} & \textcolor{sectcol}{#6} #7 \\[2pt]
-	\larrow{bgcol} & \textcolor{sectcol}{#8} #9\\[\spread]
+\begin{tabular*}{1\linewidth}{p{0.001\linewidth} p{0.25\linewidth} p{0.6\linewidth}}
+	\larrow{bgcol} & \textcolor{sectcol}{#2} & #3 \\[2pt]
+	\larrow{bgcol} & \textcolor{sectcol}{#4} & #5 \\[2pt]
+	\larrow{bgcol} & \textcolor{sectcol}{#6} & #7 \\[2pt]
+	\larrow{bgcol} & \textcolor{sectcol}{#8} & #9 \\[\spread]
 \end{tabular*}
 \end{flushleft}
 }
@@ -314,11 +319,12 @@
 \newcommand{\skilang}[7] {
 \begin{flushleft}
 \textbf{#1}\\[-7pt]
+\textcolor{softcol}{\hrule}
 \vspace{\spread}
-\begin{tabular*}{1\linewidth}{p{0.001\linewidth} p{0.9\linewidth}}
-	\larrow{bgcol} & \textcolor{sectcol}{#2} #3 \\[2pt]
-	\larrow{bgcol} & \textcolor{sectcol}{#4} #5 \\[2pt]
-	\larrow{bgcol} & \textcolor{sectcol}{#6} #7\\[\spread]
+\begin{tabular*}{1px}{p{0.001\linewidth} p{0.25\linewidth} p{0.6\linewidth}}
+	\larrow{bgcol} & \textcolor{sectcol}{#2} & #3 \\[2pt]
+	\larrow{bgcol} & \textcolor{sectcol}{#4} & #5 \\[2pt]
+	\larrow{bgcol} & \textcolor{sectcol}{#6} & #7\\[\spread]
 \end{tabular*}
 \end{flushleft}
 }
@@ -326,10 +332,11 @@
 \newcommand{\skienv}[5] {
 \begin{flushleft}
 \textbf{#1}\\[-7pt]
+\textcolor{softcol}{\hrule}
 \vspace{\spread}
-\begin{tabular*}{1\linewidth}{p{0.001\linewidth} p{0.9\linewidth}}
-	\larrow{bgcol} & \textcolor{sectcol}{#2} #3 \\[2pt]
-	\larrow{bgcol} & \textcolor{sectcol}{#4} #5\\[\spread]
+\begin{tabular*}{1px}{p{0.001\linewidth} p{0.25\linewidth} p{0.6\linewidth}}
+	\larrow{bgcol} & \textcolor{sectcol}{#2} & #3 \\[2pt]
+	\larrow{bgcol} & \textcolor{sectcol}{#4} & #5\\[\spread]
 \end{tabular*}
 \end{flushleft}
 }
@@ -391,7 +398,6 @@
 %	WORD CLOUD IMG
 %----------------------------------------------------------------------------------------
 \vspace{-110pt}
-%\hspace{0.59\linewidth}
 \hspace{0.00cm}\includegraphics[scale=0.3]{img/Nuage.jpg}
 \normalsize
 \vspace{20pt}
@@ -405,7 +411,8 @@
 %----------------------------------------------------------------------------------------
 \vspace{\spread}
 
-\cvsection{Summary}\\
+\cvsection{Summary}
+\\ \\ \\
 I am Software Engineer specialized on distributed environements. 
 \smallbreak
 I worked during 6 years into a startup company with various responsabilities from design and implements low layers of application, implements business cases up to team management. 
@@ -429,7 +436,7 @@ We recently raised funds, our product is now production-ready and a first set of
 \hfill
 \begin{minipage}[t]{0.485\textwidth}
 
-\vspace{5pt}
+\vspace{8pt}
 
 \metasection{Fields}{Software, Distributed Systems, Near RealTime}
 \metasectionsuite{}{Database, Data models, Indexation}
@@ -452,7 +459,7 @@ We recently raised funds, our product is now production-ready and a first set of
 
 \cveventtwo{2011 / 2012}{Master - Economic Information System for Enterprise}{Economic University of Montpellier}
 	{Basics of Datamining and TextMining}
-	{Supervised and Unsupervised Machine Learning Algorithms}
+	{Introduction to Supervised and Unsupervised Machine Learning Algorithms}
  
 \cveventthree{2007 / 2009}{DUT Computer Science and Management}{IUT - Montpelier Institute of Technology}
 	{Oriented Object Programation}
@@ -466,7 +473,7 @@ We recently raised funds, our product is now production-ready and a first set of
 
 \cvsection{Skills}
 \skilang{Languages}
-	{Expert :}{Java JDK 8, Multithreading}
+	{Expert :}{Java 8}
 	{Ready :}{Bash, SQL}	 
 	{Beginner :}{Python, Scala}   
 	
@@ -474,11 +481,11 @@ We recently raised funds, our product is now production-ready and a first set of
 	{Methodologies :}{ Scrum, Test Driven Development}
 	{Dev tools :}{ Git, Jira, Maven, TeamCity}
 	{Profiling :}{ Yourkit, JStack, JVisualVM}
-	{Techno :}{ Hadoop, HDFS, ZK, HBase, Lucene, Spark, Kafka, Protobuf}
+	{Techno :}{ Hadoop, HDFS, Zookeeper, HBase, Protobuf, Lucene, Spark, Kafka}
 	
-\skienv{Environment}
+\skienv{Environment} 
 	{Container :}{ Docker }
-	{Operating System :}{ Ubuntu, CentOs}
+	{Op. System :}{ Ubuntu, CentOs}
 	
 %---------------------------------------------------------------------------------------
 %	CHANGE TO RIGHT SIDE PART 
@@ -499,14 +506,14 @@ We recently raised funds, our product is now production-ready and a first set of
 	{Recruitment sessions}
 
 %
-\cveventfour{2013 / 2016}{Solution Engineer}{Scaled Risk}
+\cveventfour{2013 / 2019}{Solution Engineer}{Scaled Risk}
 	{Implements oriented-object metamodel over HBase}
 	{Distributed indexation engine with Lucene}
 	{Distributed consensus with Zookeeper}
 	{Multi-temporal storage and indexation}
 %
 \cveventtwo{2012 / 6 months}{Internship Datamining}{International retail banking - BHFM/Société Générale - Paris, La Defense}
-	{Various missions around churn phenomenon study, Definining customers profiles and attrition behaviour}
+	{Various missions around churn phenomenon study. Define customers profiles and attrition behaviour}
 	{MCA, Decision trees, Descriptives statistics}
 
 %
@@ -515,9 +522,9 @@ We recently raised funds, our product is now production-ready and a first set of
 	{OLAP System, Java, Smart GWT}
 
 %
-\cveventone{2009 / 3 months}{Internship in Computer Lab}{University of Central Lancashire - Preston, UK}
+\cveventtwo{2009 / 3 months}{Internship in Computer Lab}{University of Central Lancashire - Preston, UK}
 	{ChiCI Lab, Child computer Interaction. Specification and implementation of a ludic platform to socialize children with difficults. Interaction with Wiimote}
-%	{Java, Swing, Connect Wiimote by Bluetooth and moteJ} 
+	{Java, Swing, Connect Wiimote by Bluetooth and MoteJ framework} 
 
 \end{minipage}
 
@@ -527,8 +534,15 @@ We recently raised funds, our product is now production-ready and a first set of
 
 \null
 \vspace*{\fill}
-\hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{\mystrut \small \textcolor{white}{www.linkedin.com/in/romanwilhelm} $\cdot$ \textcolor{white}{github.com/romanwlm}}}
-
+\hspace{-0.25\linewidth}\colorbox{bgcol}
+{\makebox[1.5\linewidth][c]
+	{
+		\mystrut \small 
+		\textcolor{white}{www.linkedin.com/in/romanwilhelm} $\cdot$ 
+		\textcolor{white}{github.com/romanwlm}
+		
+	}
+}  
 
 %============================================================================%
 %
